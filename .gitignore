@@ -1,0 +1,9 @@
+# Ignore everything
+*
+
+# But not these files...
+!.gitignore
+!system-design.md
+!/.kiro
+!/.kiro/steering
+!/.kiro/steering/*.md
