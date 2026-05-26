@@ -15,10 +15,13 @@ Building real-time chat is complex — WebSocket management, message persistence
 - 1-on-1 conversations with text and file messages
 - Group chat (up to 100 participants, admin management, soft delete)
 - Real-time message delivery via WebSocket/STOMP
+- Typing indicators (real-time via WebSocket)
+- Read receipts and delivery status (SENT → DELIVERED → READ)
 - Webhook-based event delivery for async integrations
 - File upload/download with access control
 - Push notification support (via webhook → FCM)
 - JWT-based authentication (client and user level)
+- Child accounts (QR-based login, QR-based contact adding, single-device, contacts-only messaging)
 
 ## Client Integration Model
 1. Client registers and gets credentials (username + secret)
@@ -29,8 +32,6 @@ Building real-time chat is complex — WebSocket management, message persistence
 
 ## Planned Capabilities
 - Temporary/anonymous users (help desk, chat rooms)
-- Typing indicators and read receipts
 - Per-client statistics and monitoring
 - SDK / client libraries (JavaScript, iOS, Android)
 - End-to-end encryption
-- Message search
