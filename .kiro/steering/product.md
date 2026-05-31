@@ -17,6 +17,7 @@ Building real-time chat is complex — WebSocket management, message persistence
 - Real-time message delivery via WebSocket/STOMP
 - Typing indicators (real-time via WebSocket)
 - Read receipts and delivery status (SENT → DELIVERED → READ)
+- Message deletion (delete for me / delete for everyone with soft-delete and reconnect sync)
 - Webhook-based event delivery for async integrations
 - File upload/download with access control
 - Push notification support (via webhook → FCM)
