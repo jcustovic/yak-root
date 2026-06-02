@@ -22,6 +22,9 @@
 - MongoDB connection properties under `spring.mongodb.*` (Boot 4 change from `spring.data.mongodb.*`)
 - Each service has its own git repository and Docker image
 - Domain-driven design: `domain/` (business logic), `infrastructure/` (adapters), `web/` (controllers)
+- Layered architecture: Controller → Service (domain) → Repository interface (domain) → RepositoryImpl (infrastructure) → MongoRepository (Spring Data)
+- MongoDB documents (`*Document`) never leak above the infrastructure layer; domain models are used in services and controllers
+- Resource access isolation: all queries and mutations must be scoped to the authenticated `clientId` (for client-api) or `userId` (for user-api). Never allow access to a resource without verifying ownership.
 
 ## Infrastructure
 | Component | Purpose |

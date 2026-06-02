@@ -19,6 +19,7 @@ Building real-time chat is complex — WebSocket management, message persistence
 - Read receipts and delivery status (SENT → DELIVERED → READ)
 - Message deletion (delete for me / delete for everyone with soft-delete and reconnect sync)
 - User blocking (block/unblock per conversation; stops messages, calls, presence, group invites)
+- Conversation reporting (user submits description + last 10 messages; stored in MongoDB for admin review)
 - Webhook-based event delivery for async integrations
 - File upload/download with access control
 - Push notification support (via webhook → FCM)

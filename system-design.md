@@ -11,7 +11,7 @@ Yak is a **chat-as-a-service platform** built with Spring Boot 4 microservices (
 | Service | Port (local) | Port (docker) | Purpose |
 |---------|-------------|---------------|---------|
 | **yak-gateway** | 8000 | 8080 | Spring Cloud Gateway — single entry point, routes to backend services |
-| **yak-api** | 8081 | 8080 | Core chat API — users, conversations, messages, groups, webhook event publishing |
+| **yak-api** | 8081 | 8080 | Core chat API — users, conversations, messages, groups, reports, webhook event publishing |
 | **yak-websocket** | 8088 | 8080 | WebSocket/STOMP server — real-time message delivery via RabbitMQ relay |
 | **yak-filemanager** | 8082 | 8080 | File storage service — upload/download with AWS S3 or local filesystem |
 | **yak-webhook-notifier** | 8083 | 8080 | Async event consumer — reads from Redis, delivers webhooks to clients |
