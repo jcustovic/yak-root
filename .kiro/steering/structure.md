@@ -52,6 +52,9 @@ Independent apps that consume the Yak platform through the gateway. They do NOT 
 2. **Platform services → direct Feign calls** (yak-api calls yak-websocket and yak-filemanager directly)
 3. **Async events → Redis stream** (yak-api publishes, yak-webhook-notifier consumes via consumer group)
 4. **Real-time → RabbitMQ STOMP relay** (yak-websocket uses RabbitMQ for message routing)
+   - Per-user **incoming** exchange: receives direct messages, call events, receipts
+   - Per-user **presence** exchange: fans out presence, typing, and profile updates to all contacts (bidirectional binding on subscription)
+   - Per-group **fanout** exchange: fans out group messages and conversation updates to all members
 5. **Resource access isolation** — all queries and mutations must be scoped to the authenticated `clientId` (client-api) or `userId` (user-api). A client must never access another client's resources; a user must never access another user's resources.
 
 ## Key Spring Boot 4 Conventions
