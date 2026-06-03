@@ -21,6 +21,7 @@ Building real-time chat is complex — WebSocket management, message persistence
 - User blocking (block/unblock per conversation; stops messages, calls, presence, group invites)
 - Conversation reporting (user submits description + last 10 messages; stored in MongoDB for admin review)
 - Webhook-based event delivery for async integrations
+- Message acknowledgement & server deletion (opt-in per client; messages deleted from server once all recipients acknowledge; foundation for E2EE)
 - File upload/download with access control
 - Push notification support (via webhook → FCM)
 - JWT-based authentication (client and user level)
