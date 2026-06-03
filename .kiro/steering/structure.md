@@ -32,7 +32,7 @@ Services that make up the chat platform. They communicate internally.
 | yak-api | 8081 | Users, conversations, messages, groups, reports, webhook publishing |
 | yak-websocket | 8088 | Real-time delivery via STOMP/RabbitMQ |
 | yak-filemanager | 8082 | File upload/download, access control |
-| yak-webhook-notifier | 8083 | Consumes Redis queue, delivers webhooks |
+| yak-webhook-notifier | 8083 | Consumes Redis stream, delivers webhooks |
 
 ### Client Applications
 Independent apps that consume the Yak platform through the gateway. They do NOT communicate with each other.
@@ -50,7 +50,7 @@ Independent apps that consume the Yak platform through the gateway. They do NOT 
 ## Communication Rules
 1. **Client apps → always through gateway** (yak-demo and yak-messenger-api never call backend services directly)
 2. **Platform services → direct Feign calls** (yak-api calls yak-websocket and yak-filemanager directly)
-3. **Async events → Redis queue** (yak-api publishes, yak-webhook-notifier consumes)
+3. **Async events → Redis stream** (yak-api publishes, yak-webhook-notifier consumes via consumer group)
 4. **Real-time → RabbitMQ STOMP relay** (yak-websocket uses RabbitMQ for message routing)
 5. **Resource access isolation** — all queries and mutations must be scoped to the authenticated `clientId` (client-api) or `userId` (user-api). A client must never access another client's resources; a user must never access another user's resources.
 
@@ -60,6 +60,7 @@ Independent apps that consume the Yak platform through the gateway. They do NOT 
 - Test annotations: `@MockitoBean` (not `@MockBean`), `@WebMvcTest` from `org.springframework.boot.webmvc.test.autoconfigure`
 - SpringDoc OpenAPI 3.x for Swagger UI
 - Spring Security 7: `@EnableWebSocketSecurity` replaces `AbstractSecurityWebSocketMessageBrokerConfigurer`
+- QueryDSL: use OpenFeign fork (`io.github.openfeign.querydsl` 7.x), not the original `com.querydsl` (unmaintained). Requires `mysema-commons-lang` bridge dependency.
 
 ## Module Internal Structure (typical)
 ```
