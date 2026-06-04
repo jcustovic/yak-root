@@ -38,4 +38,4 @@ Building real-time chat is complex — WebSocket management, message persistence
 - Temporary/anonymous users (help desk, chat rooms)
 - Per-client statistics and monitoring
 - SDK / client libraries (JavaScript, iOS, Android)
-- End-to-end encryption
+- End-to-end encryption (key exchange API complete)
