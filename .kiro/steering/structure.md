@@ -31,7 +31,7 @@ Services that make up the chat platform. They communicate internally.
 | yak-gateway | 8000 | Routes external traffic to backend services |
 | yak-api | 8081 | Users, conversations, messages, groups, reports, webhook publishing |
 | yak-websocket | 8088 | Real-time delivery via STOMP/RabbitMQ |
-| yak-filemanager | 8082 | File upload/download, access control |
+| yak-filemanager | 8082 | File upload/download/deletion, access control |
 | yak-webhook-notifier | 8083 | Consumes Redis stream, delivers webhooks |
 
 ### Client Applications
