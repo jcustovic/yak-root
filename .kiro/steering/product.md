@@ -13,6 +13,7 @@ Building real-time chat is complex — WebSocket management, message persistence
 ## Core Capabilities
 - Multi-tenant chat backend (isolated per client)
 - 1-on-1 conversations with text and file messages
+- Audio messages (file messages with mediaType for client-side rendering)
 - Group chat (up to 100 participants, admin management, soft delete)
 - Real-time message delivery via WebSocket/STOMP
 - Typing indicators (real-time via WebSocket)
