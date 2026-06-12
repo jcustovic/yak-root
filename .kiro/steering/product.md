@@ -14,11 +14,13 @@ Building real-time chat is complex — WebSocket management, message persistence
 - Multi-tenant chat backend (isolated per client)
 - 1-on-1 conversations with text and file messages
 - Audio messages (file messages with mediaType for client-side rendering)
+- View-once messages (viewOnce flag, client-side expiration after viewing)
 - Group chat (up to 100 participants, admin management, soft delete)
 - Real-time message delivery via WebSocket/STOMP
 - Typing indicators (real-time via WebSocket)
 - Read receipts and delivery status (SENT → DELIVERED → READ)
 - Message reactions (emoji reactions delivered as messages, compatible with deleteAfterDelivery)
+- Disappearing messages (per-conversation configurable timer, client-side expiration)
 - Message deletion (delete for me / delete for everyone with soft-delete and reconnect sync)
 - User blocking (block/unblock per conversation; stops messages, calls, presence, group invites)
 - Conversation reporting (user submits description + last 10 messages; stored in MongoDB for admin review)
